@@ -1,3 +1,4 @@
+console.log("------ EJERCICIO 1 ------");
 /* EJERCICIO 1: Sistema de gestión de inventario
 Crea un sistema de gestión de inventario para una pequeña tienda. Debes definir un objeto 
 llamado inventory que contenga las siguientes propiedades:
@@ -166,6 +167,110 @@ console.log(gradebook.students.filter(student => student.average > 8));
 
 // Crear un array con los nombres de todos los estudiantes que tienen al menos una nota 
 // mayor que 9.
+let arrayStudent9 = gradebook.students.filter(student => 
+    student.grades.some(grade => 
+        grade == 9)).map(student => 
+        student.name);
 
+console.log(arrayStudent9);
 
 // Ordenar los estudiantes en función de sus promedios, de mayor a menor.
+let orderedStudents = gradebook.students.sort((st1, st2) => st1.average - st2.average);
+
+console.log(orderedStudents);
+
+
+console.log("------ EJERCICIO 3 ------");
+/* EJERCICIO 3: Generador de acrónimos
+Escribe una función que tome un array de objetos, donde cada objeto representa una frase, 
+y genere un acrónimo para cada frase. El acrónimo debe formarse tomando la primera letra 
+de cada palabra de la frase y convirtiéndola a mayúscula.
+Ejemplo:
+*/
+let phrases = [
+  { phrase: "Hyper Text Markup Language" },
+  { phrase: "Cascading Style Sheets" },
+  { phrase: "Object Oriented Programming" }
+];
+
+// Crea una función que genere el acrónimo para cada frase y lo añada como una nueva 
+// propiedad acronym en cada objeto.
+function addAcronym(){
+    phrases.forEach(phrase => {
+        phrase.acronym = phrase.phrase.split(" ")
+                                      .map(word => word[0].toLocaleUpperCase())
+                                      .join("")
+        }
+    )
+}
+
+addAcronym();
+console.log(phrases);
+
+// Utiliza map() para devolver un array de objetos con los acrónimos ya generados.
+let phrases2 = 
+                phrases.map((phrase) => {
+                    newPhrase = {};
+                    newPhrase.phrase = phrase.phrase;
+                    newPhrase.acronym = phrase.phrase.split(" ")
+                                                    .map(word => word[0].toLocaleLowerCase())
+                                                    .join("");
+                    
+                    return newPhrase;
+                    });
+
+console.log(phrases2);
+
+// Filtra las frases que contengan más de tres palabras y devuelve solo esas frases 
+// con su acrónimo.
+console.log(phrases.filter((phrase => phrase.acronym.length > 3)));
+
+
+console.log("------ EJERCICIO 4 ------");
+/* EJERCICIO 4: Transformación de datos
+Crea un objeto bookStore que represente una tienda de libros. Cada libro tendrá las 
+siguientes propiedades: title, author, price y category (Ficción, No ficción, 
+Ciencia, etc.).
+Ejemplo inicial:
+*/
+let bookStore = {
+  books: [
+    { title: "1984", author: "George Orwell", price: 15, category: "Fiction" },
+    { title: "Sapiens", author: "Yuval Noah Harari", price: 20, category: "Non-fiction" }
+  ]
+};
+
+// Crea un método addBook(title, author, price, category) que añada un nuevo libro 
+// al array books.
+function addBook(title, author, price, category){
+    bookStore.books.push({
+        title, author, price, category
+    })
+}
+
+addBook("El Hobbit", "JRR. Tolkien", 18, "Fantasy");
+console.log(bookStore);
+
+// Crea un método getBooksByCategory(category) que devuelva un array con todos los 
+// libros de esa categoría.
+function getBooksByCategory(category){
+    return bookStore.books.filter(book => book.category == category)
+}
+
+console.log(getBooksByCategory("Fiction"));
+
+// Utiliza reduce() para calcular el precio total de todos los libros.
+let totalPrice = bookStore.books.reduce((total, book) =>
+    total += book.price, 0);
+
+console.log(totalPrice);
+
+// Utiliza filter() para devolver solo los libros cuyo precio sea mayor de 18.
+let expensiveBooks = bookStore.books.filter(book => book.price > 18);
+
+console.log(expensiveBooks);
+
+// Utiliza sort() para ordenar los libros por precio, de mayor a menor. */
+let orderedBooks = bookStore.books.sort((b1, b2) => b2.price - b1.price);
+
+console.log(orderedBooks);
