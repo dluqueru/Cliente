@@ -43,8 +43,37 @@
 
 img {
   float: left;
+  max-height: 30vh;
+}
+
+.borde {
+  margin: 50px;
+  border: 1px solid;
 }
 
 .texto {
-  float: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.about{
+  border-bottom: 2px solid;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  width: max-content;
+  margin-left: 5vw;
+}
+
+li{
+  border: 1px solid;
+  padding: inherit;
+  margin-left: 10vw;
 }
