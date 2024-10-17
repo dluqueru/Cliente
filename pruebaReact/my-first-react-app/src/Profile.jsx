@@ -1,10 +1,6 @@
 import './Profile.css'
 
-const name = "Daniel Luque";
-const age = 29;
-const email = "dluqueru@gmail.com";
-
-function Profile() {
+function Profile({name = 'John Doe', age = 100, email = 'example@email.com'}) {
 
   return (
     <div className='borde'>

@@ -7,8 +7,9 @@ function App(){
         <>
         <About />
         <div>
-        <Profile />
-        <Profile />
+        <Profile name='Daniel' age = {29} email = 'dluqueru@gmail.com'/>
+        <Profile name='Cristina' age = {31} email = 'cristina@gmail.com'/>
+        <Profile/>
         </div>
         </>
     );
