@@ -101,6 +101,12 @@ function cantArtConO(){
 
 cantArtConO();
 
+inventory.items.forEach(item => {
+    console.log(item);
+});
+
+console.log(inventory);
+
 
 console.log("------ EJERCICIO 2 ------");
 /* EJERCICIO 2: Sistema de gestión de notas

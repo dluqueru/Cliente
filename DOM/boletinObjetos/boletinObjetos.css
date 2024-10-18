@@ -1,0 +1,45 @@
+h1 {
+    text-align: center;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    padding: 10px 0;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+    color: #333;
+    min-width: 200px;
+}
+
+table tr {
+    display: flex;
+    background-color: #f9f9f9;
+    justify-content: center;
+}
+
+table td {
+    color: #555;
+    min-width: 200px;
+}
+
+.caro {
+    background-color: rgba(128, 0, 0, 0.699);
+    color: #f9f9f9;
+}
+
+.caro td {
+    color: #f9f9f9;
+}
