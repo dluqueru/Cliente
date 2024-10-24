@@ -44,11 +44,14 @@
 img {
   float: left;
   max-height: 30vh;
+  border: hidden;
+  border-radius: 10px;
 }
 
 .borde {
   margin: 50px;
   border: 1px solid;
+  border-radius: 10px;
 }
 
 .texto {
@@ -70,10 +73,12 @@ ul{
   padding: 1vh;
   width: max-content;
   margin-left: 5vw;
+  border-radius: 10px;
 }
 
 li{
   border: 1px solid;
   padding: inherit;
   margin-left: 10vw;
+  border-radius: 10px;
 }
