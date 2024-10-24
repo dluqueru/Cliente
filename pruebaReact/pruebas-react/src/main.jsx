@@ -10,6 +10,7 @@ import Ejercicio3 from './Ejercicio3.jsx'
 import Ejercicio4 from './Ejercicio4.jsx'
 import Ejercicio5 from './Ejercicio5.jsx'
 import Ejercicio6 from './Ejercicio6.jsx'
+import Ejercicio7 from './Ejercicio7.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
     {/* <Ejercicio3 /> */}
     {/* <Ejercicio4 /> */}
     {/* <Ejercicio5 /> */}
-    <Ejercicio6 />
+    {/* <Ejercicio6 /> */}
+    <Ejercicio7 />
   </StrictMode>
 )
