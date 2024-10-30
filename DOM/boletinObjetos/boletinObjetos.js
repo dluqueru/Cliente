@@ -149,8 +149,6 @@ function creaTabla() {
     container.appendChild(table);
 }
 
-creaTabla();
-
 function destacarCaros(){
     const precios = Array.from(document.querySelectorAll('.price'));
     precios.forEach(precio => {
@@ -160,4 +158,30 @@ function destacarCaros(){
     })
 }
 
+function actualizaTabla(){
+    document.querySelector(".tabla").remove();
+    creaTabla();
+}
+
+function addArticle(name, price, quantity){
+    inventory.items.push({ name: name, quantity: quantity, price: price })
+}
+
+const inputName = document.getElementById('name');
+const inputPrice = document.getElementById('price');
+const inputQuantity = document.getElementById('quantity');
+
+document.addEventListener('submit', function(e){
+    e.preventDefault();
+    addArticle(inputName.value, inputPrice.value, inputQuantity.value)
+    console.log("Nuevo artículo creado con nombre " + inputName.value);
+    actualizaTabla();
+    destacarCaros();
+    // seteo los inputs a null para "limpiarlos"
+    inputName.value = null;
+    inputPrice.value = null;
+    inputQuantity.value = null;
+})
+
+creaTabla();
 destacarCaros();
