@@ -167,6 +167,18 @@ function addArticle(name, price, quantity){
     inventory.items.push({ name: name, quantity: quantity, price: price })
 }
 
+function deleteArticle(name){
+    inventory.items.forEach(item => {
+        if(item.name == name){
+            inventory.items.splice(item, 1);
+        } else {
+            console.log("El artículo no se encuentra en el inventario");
+        }
+    })
+}
+
+// deleteArticle("Laptop");
+
 const inputName = document.getElementById('name');
 const inputPrice = document.getElementById('price');
 const inputQuantity = document.getElementById('quantity');
