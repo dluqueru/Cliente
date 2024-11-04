@@ -117,14 +117,17 @@ function creaTabla() {
     const cell1 = document.createElement('th');
     const cell2 = document.createElement('th');
     const cell3 = document.createElement('th');
+    const cell4 = document.createElement('th');
 
     cell1.appendChild(document.createTextNode('Artículo'));
     cell2.appendChild(document.createTextNode('Precio'));
     cell3.appendChild(document.createTextNode('Cantidad'));
+    cell4.appendChild(document.createTextNode('Acción'));
 
     row.appendChild(cell1);
     row.appendChild(cell2);
     row.appendChild(cell3);
+    row.appendChild(cell4);
 
     table.appendChild(row);
 
@@ -133,15 +136,28 @@ function creaTabla() {
         const cell1 = document.createElement('td');
         const cell2 = document.createElement('td');
         const cell3 = document.createElement('td');
+        const cell4 = document.createElement('td');
+        const btn = document.createElement('button');
+
+        btn.appendChild(document.createTextNode('Borrar'));
+        btn.classList.add('btn');
+
+        btn.setAttribute('data-name', item.name);
+        btn.addEventListener("click", function() {
+            deleteArticle(item.name);
+            actualizaTabla(); // Para refrescar la tabla en cuanto se borra
+        });
 
         cell1.appendChild(document.createTextNode(item.name));
         cell2.appendChild(document.createTextNode(item.price));
         cell2.classList.add('price');
         cell3.appendChild(document.createTextNode(item.quantity));
+        cell4.appendChild(btn);
 
         row.appendChild(cell1);
         row.appendChild(cell2);
         row.appendChild(cell3);
+        row.appendChild(cell4);
 
         table.appendChild(row);
     });
@@ -168,13 +184,12 @@ function addArticle(name, price, quantity){
 }
 
 function deleteArticle(name){
-    inventory.items.forEach(item => {
-        if(item.name == name){
-            inventory.items.splice(item, 1);
-        } else {
-            console.log("El artículo no se encuentra en el inventario");
-        }
-    })
+    const index = inventory.items.findIndex(item => item.name === name);
+    if (index !== -1) {
+        inventory.items.splice(index, 1);
+    } else {
+        console.log("El artículo no se encuentra en el inventario");
+    }
 }
 
 // deleteArticle("Laptop");
