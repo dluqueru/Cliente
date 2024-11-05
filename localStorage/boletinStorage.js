@@ -63,26 +63,3 @@ localStorage.removeItem('cristina');
 
 // c) Verifica si la clave que contiene el objeto aún existe en localStorage.
 console.log(localStorage);
-
-
-// Ejercicio 6: Lista de Usuarios con Opciones de Borrar y Editar
-
-// a) Utiliza JavaScript para capturar los valores del formulario y agregar un nuevo 
-// usuario a una lista visible en la página. Cada usuario en la lista debe incluir 
-// un botón "Borrar" al lado de su nombre, dirección y dirección de correo electrónico.
-
-// b) Cuando se haga clic en el botón "Borrar" junto a un usuario, debe eliminarse 
-// ese usuario de la lista.
-
-// c) Utiliza localStorage para almacenar la lista de usuarios de manera persistente,
-//  de modo que los usuarios agregados no se pierdan cuando se actualice la página o 
-//  se cierre el navegador.
-
-// Ampliación:
-
-// d) Ahora vamos a permitir que se puedan editar los usuarios, para ello, cuando se 
-// añada un usuario a la lista, además del botón borrar, tendrá también un botón editar. 
-// Cuando se haga clic en el botón "Editar" junto a un usuario, se cargarán los datos 
-// del usuario en los campos del formulario y el botón cambiará a Editar usuario. Al 
-// pulsar el botón se cambiarán los datos del usuario en el localStorage. Los cambios 
-// realizados deben reflejarse en la lista.
