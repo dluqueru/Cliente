@@ -4,25 +4,48 @@
 // usuario a una lista visible en la página. Cada usuario en la lista debe incluir 
 // un botón "Borrar" al lado de su nombre, dirección y dirección de correo electrónico.
 const ul = document.getElementById('userList');
+const users = JSON.parse(localStorage.getItem('users')) || []; // Lgante
+localStorage.setItem('users', JSON.stringify(users));
+
+let nombreField = document.getElementById('name');
+let direccionField = document.getElementById('address');
+let emailField = document.getElementById('email');
+
 
 function addUser(){
-    const nombre = document.getElementById('name').value;
-    const direccion = document.getElementById('address').value;
-    const email = document.getElementById('email').value;
-    const btn = document.createElement('button');
+    const nombre = nombreField.value;
+    const direccion = direccionField.value;
+    const email = emailField.value;
+    const btnDelete = document.createElement('button');
+    const btnUpdate = document.createElement('button');
 
-    btn.appendChild(document.createTextNode('Borrar'));
+    btnDelete.appendChild(document.createTextNode('Borrar'));
+    btnUpdate.appendChild(document.createTextNode('Editar'));
     
-    btn.addEventListener("click", function() {
-        btn.parentElement.remove();
+    btnDelete.addEventListener("click", function() {
+        btnDelete.parentElement.remove();
     });
+    btnUpdate.addEventListener("click", editUser);
 
-    const usuario = nombre + " | " + direccion + " | " + email;
+    // if(editFormButton.textContent === 'Editar usuario'){
+    //     const editUser = users.find(user => user.name = nombre);
+    //     editUser.name = nombre;
+    //     editUser.address = direccion;
+    //     editUser.email = email; 
+
+    //     const elements = Array.from(ul.children);
+    //     const userLi = elements.find(element => element.contains(nombre));
+    // }
+
+    const usuario = nombre + " | " + direccion + " | " + email + " | ";
 
     const li = document.createElement('li');
     li.appendChild(document.createTextNode(usuario));
-    li.appendChild(btn);
+    li.appendChild(btnDelete);
+    li.appendChild(btnUpdate);
     ul.appendChild(li);
+
+    users.push({nombre, direccion, email});
 }
 
 document.addEventListener('submit', function(e) {
@@ -37,7 +60,7 @@ document.addEventListener('submit', function(e) {
 //  de modo que los usuarios agregados no se pierdan cuando se actualice la página o 
 //  se cierre el navegador.
 function guardarLocal(){
-    localStorage.setItem('listaUsuarios', JSON.stringify(ul.innerHTML));
+    localStorage.setItem('users', JSON.stringify(users));
 }
 
 document.getElementById('local').addEventListener('click', function(e) {
@@ -45,18 +68,17 @@ document.getElementById('local').addEventListener('click', function(e) {
     guardarLocal();
 })
 
-console.log(JSON.parse(localStorage.getItem('listaUsuarios')));
+console.log(JSON.parse(localStorage.getItem('users')));
 
 function rellenarLista(){
-    const listaJSON = JSON.parse(localStorage.getItem('listaUsuarios'))
-    const listArray = listaJSON.split('</li>');
+    const listaJSON = JSON.parse(localStorage.getItem('users'))
 
-    listArray.forEach(element => {
+    listaJSON.forEach(element => {
         const li = document.createElement('li');
-        li.appendChild(document.createTextNode(element));
+        li.appendChild(document.createTextNode(JSON.stringify(element)));
         ul.appendChild(li);
     });
-    console.log(listArray);
+    console.log(listaJSON);
 }
 
 rellenarLista();
@@ -69,3 +91,13 @@ rellenarLista();
 // del usuario en los campos del formulario y el botón cambiará a Editar usuario. Al 
 // pulsar el botón se cambiarán los datos del usuario en el localStorage. Los cambios 
 // realizados deben reflejarse en la lista.
+function editUser(event){
+    const textUser = event.target.parentElement.textContent;
+    const splitUser = textUser.split(" | ");
+    const name = splitUser[0].trim();
+    const address = splitUser[1].trim();
+    const email = splitUser[2].trim();
+    nombreField.value = name;
+    direccionField.value = address;
+    emailField.value = email;
+}
