@@ -11,6 +11,8 @@ import Ejercicio4 from './Ejercicio4.jsx'
 import Ejercicio5 from './Ejercicio5.jsx'
 import Ejercicio6 from './Ejercicio6.jsx'
 import Ejercicio7 from './Ejercicio7.jsx'
+import Contador from './estados/Counter.jsx'
+import CambiadorTexto from './estados/CambiadorTexto.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -23,6 +25,8 @@ createRoot(document.getElementById('root')).render(
     {/* <Ejercicio4 /> */}
     {/* <Ejercicio5 /> */}
     {/* <Ejercicio6 /> */}
-    <Ejercicio7 />
+    {/* <Ejercicio7 /> */}
+    {/* <Contador /> */}
+    <CambiadorTexto />
   </StrictMode>
 )
