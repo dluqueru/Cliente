@@ -13,6 +13,9 @@ import Ejercicio6 from './Ejercicio6.jsx'
 import Ejercicio7 from './Ejercicio7.jsx'
 import Contador from './estados/Counter.jsx'
 import CambiadorTexto from './estados/CambiadorTexto.jsx'
+import MostrarOcultar from './estados/MostrarOcultar.jsx'
+import ClickCounter from './estados/ClickCounter.jsx'
+import ClickLimiter from './estados/ClickLimiter.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -27,6 +30,9 @@ createRoot(document.getElementById('root')).render(
     {/* <Ejercicio6 /> */}
     {/* <Ejercicio7 /> */}
     {/* <Contador /> */}
-    <CambiadorTexto />
+    {/* <CambiadorTexto /> */}
+    {/* <MostrarOcultar /> */}
+    {/* <ClickCounter /> */}
+    <ClickLimiter />
   </StrictMode>
 )

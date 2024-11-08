@@ -12,10 +12,23 @@ import { useState } from "react";
 // Extra: Crea un segundo botón para restaurar el texto al original.
 
 function CambiadorTexto() {
-    const[];
+    const origen = "Texto Original";
+
+    const[text, setText] = useState(origen);
+
+    function modificaTexto(){
+        setText("Texto Modificado");
+    }
+
+    function textoOriginal(){
+        setText(origen);
+    }
 
     return (
         <div>
+            <p>{text}</p>
+            <button onClick={modificaTexto}>Cambiar texto</button>
+            <button onClick={textoOriginal}>Texto original</button>
         </div>
     );
 }
