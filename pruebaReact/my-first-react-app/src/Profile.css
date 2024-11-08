@@ -45,7 +45,7 @@ img {
   float: left;
   max-height: 30vh;
   border: hidden;
-  border-radius: 10px;
+  border-radius: 100%;
 }
 
 .borde {
@@ -63,6 +63,12 @@ img {
   border-bottom: 2px solid;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 ul{
   list-style: none;
   display: flex;
@@ -71,14 +77,15 @@ ul{
   justify-content: center;
   align-items: center;
   padding: 1vh;
-  width: max-content;
-  margin-left: 5vw;
+  width: 70%;
   border-radius: 10px;
 }
 
 li{
   border: 1px solid;
   padding: inherit;
-  margin-left: 10vw;
+  /* margin-left: 10vw; */
+  margin: auto;
   border-radius: 10px;
+  background-color: #535bf2;
 }
