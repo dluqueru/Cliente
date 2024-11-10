@@ -119,7 +119,7 @@ function createTable(){
 
         button.appendChild(document.createTextNode("Añadir nota"));
         button.addEventListener('click', function(){
-            gradeForm(cell4);
+            gradeForm(student.name, cell4);
             cell4.removeChild(button)
         })
         cell4.appendChild(button);
@@ -139,7 +139,7 @@ function updateTable(){
     createTable();
 }
 
-function gradeForm(td){
+function gradeForm(name, td){
     const gradeForm = document.createElement('form');
     gradeForm.classList.add('grades');
     const label = document.createElement('label');
@@ -160,13 +160,21 @@ function gradeForm(td){
     gradeForm.appendChild(br);
     gradeForm.appendChild(submit);
 
+    gradeForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(grade.value != ""){
+            addGrade(name, grade.value);
+            updateTable();
+        }
+    })
+
     td.appendChild(gradeForm);
 }
 
-const form = document.getElementById('create');
+const formCreate = document.getElementById('create');
 const inputName = document.getElementById('name');
 
-form.addEventListener('submit', function(e){
+formCreate.addEventListener('submit', function(e){
     e.preventDefault();
     if(inputName.value != ""){
         addStudent(inputName.value);
@@ -174,7 +182,4 @@ form.addEventListener('submit', function(e){
     }
 })
 
-
-
 createTable();
-gradeForm();
