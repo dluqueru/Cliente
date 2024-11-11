@@ -78,6 +78,10 @@ console.log(orderedStudents);
 const container = document.getElementById('container');
   
 function createTable(){
+    localStorage.getItem("alumnos") === null ? 
+    alumnos = gradebook.students :
+    alumnos = JSON.parse(localStorage.getItem("alumnos"));
+
     const table = document.createElement('table');
     table.classList.add('tabla');
 
@@ -99,7 +103,7 @@ function createTable(){
 
     table.appendChild(row1);
 
-    gradebook.students.forEach(student => {
+    alumnos.forEach(student => {
         const row2 = document.createElement('tr');
         const cell1 = document.createElement('td');
         const cell2 = document.createElement('td');
@@ -137,6 +141,7 @@ function createTable(){
 function updateTable(){
     document.querySelector(".tabla").remove();
     createTable();
+    localStorage.setItem('alumnos', JSON.stringify(gradebook.students));
 }
 
 function gradeForm(name, td){
@@ -164,6 +169,7 @@ function gradeForm(name, td){
         e.preventDefault();
         if(grade.value != ""){
             addGrade(name, grade.value);
+            localStorage.setItem('alumnos', JSON.stringify(gradebook.students));
             updateTable();
         }
     })
@@ -178,8 +184,38 @@ formCreate.addEventListener('submit', function(e){
     e.preventDefault();
     if(inputName.value != ""){
         addStudent(inputName.value);
+        localStorage.setItem('alumnos', JSON.stringify(gradebook.students));
         updateTable();
     }
 })
 
 createTable();
+
+// Guardar lista de alumnos en Local Storage: Cada vez que 
+// se añada un nuevo alumno o se actualicen sus notas, 
+// guarda el objeto gradebook en localStorage.
+
+// localStorage.setItem('alumnos', JSON.stringify(gradebook.students));
+// console.log(JSON.parse(localStorage.getItem('alumnos')));
+
+
+// Cargar alumnos desde Local Storage: Al cargar la página, 
+// verifica si existe gradebook en localStorage. Si es así, 
+// carga esa información para mostrar a los alumnos y sus notas.
+
+
+// Botón de reset de notas: Añade un botón que permita limpiar 
+// todas las notas de los alumnos y reiniciar el gradebook en 
+// localStorage.
+const reset = document.getElementById('reset');
+reset.addEventListener('click', function(){
+    gradebook.students.forEach(student =>
+        student.grades = []
+    )
+    gradebook.students.forEach(student =>
+        student.average = 0
+    )
+
+    localStorage.removeItem('alumnos');
+    updateTable();
+})
