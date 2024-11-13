@@ -1,0 +1,22 @@
+{
+  "books": [
+    {
+      "id": "a85e",
+      "title": "Don Quijote de la Mancha",
+      "fecha": "20/02/1605",
+      "pages": 1432,
+      "authorId": 1
+    }
+  ],
+  "authors": [
+    {
+      "id": "1",
+      "name": "Cervantes Saavedra, Miguel de"
+    },
+    {
+      "id": "2",
+      "name": "King, Stephen"
+    }
+  ],
+  "editorials": []
+}

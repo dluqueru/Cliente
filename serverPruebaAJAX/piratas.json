@@ -1,0 +1,126 @@
+{
+  "barcos": [
+    {
+      "id": "1",
+      "nombre": "Perla Negra",
+      "capacidad": 100,
+      "tipo": "galeón",
+      "capitan": "Jack Sparrow",
+      "armamento": [
+        "cañones",
+        "espadas",
+        "mosquetes"
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Venganza de la Reina Ana",
+      "capacidad": 150,
+      "tipo": "fragata",
+      "capitan": "Barbanegra",
+      "armamento": [
+        "cañones pesados",
+        "espadas",
+        "granadas"
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "Halcón de los Mares",
+      "capacidad": 75,
+      "tipo": "corbeta",
+      "capitan": "William Kidd",
+      "armamento": [
+        "cañones ligeros",
+        "arcos",
+        "ballestas"
+      ]
+    },
+    {
+      "nombre": "Thousand Sunny",
+      "capacidad": 15,
+      "tipo": "galeón",
+      "capitan": "Joy Boy",
+      "armamento": [
+        "cañones",
+        "espadas",
+        "mosquetes"
+      ],
+      "id": "4"
+    },
+    {
+      "id": "1480",
+      "nombre": "La barca de mi tío",
+      "capacidad": 1,
+      "tipo": "barca",
+      "capitan": "Mi tío",
+      "armamento": [
+        "caña"
+      ]
+    }
+  ],
+  "piratas": [
+    {
+      "id": "1",
+      "nombre": "Jack Sparrow",
+      "edad": 45,
+      "barco": "Perla Negra",
+      "especialidad": "estrategia",
+      "recompensa": 50000
+    },
+    {
+      "id": "2",
+      "nombre": "Barbanegra",
+      "edad": 40,
+      "barco": "Venganza de la Reina Ana",
+      "especialidad": "combate",
+      "recompensa": 100000
+    },
+    {
+      "id": "3",
+      "nombre": "Anne Bonny",
+      "edad": 30,
+      "barco": "Halcón de los Mares",
+      "especialidad": "espionaje",
+      "recompensa": 70000
+    }
+  ],
+  "islas": [
+    {
+      "id": "1",
+      "nombre": "Isla Tortuga",
+      "ubicacion": "Mar Caribe",
+      "tipo": "puerto seguro",
+      "habitantes": 300,
+      "recursos": [
+        "agua",
+        "alimentos",
+        "herramientas"
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Isla del Tesoro",
+      "ubicacion": "Atlántico Sur",
+      "tipo": "isla desierta",
+      "habitantes": 0,
+      "recursos": [
+        "oro",
+        "joyas",
+        "mapas antiguos"
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "Isla de la Muerte",
+      "ubicacion": "Pacífico Norte",
+      "tipo": "isla maldita",
+      "habitantes": 50,
+      "recursos": [
+        "artefactos",
+        "piedras preciosas",
+        "esqueletos"
+      ]
+    }
+  ]
+}
