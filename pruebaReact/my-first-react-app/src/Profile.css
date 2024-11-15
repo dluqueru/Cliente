@@ -41,7 +41,7 @@
   color: #888;
 }
 
-img {
+.avatar {
   float: left;
   max-height: 30vh;
   border: hidden;
@@ -84,8 +84,22 @@ ul{
 li{
   border: 1px solid;
   padding: inherit;
-  /* margin-left: 10vw; */
   margin: auto;
   border-radius: 10px;
   background-color: #535bf2;
+}
+
+li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fav {
+  float: right;
+  padding-right: 10vw;
+  padding-top: 4vh;
+  max-height: 5vh;
+  border: hidden;
 }
