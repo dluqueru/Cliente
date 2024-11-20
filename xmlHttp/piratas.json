@@ -1,0 +1,399 @@
+{
+  "barcos": [
+    {
+      "id": "1",
+      "nombre": "Perla Negra",
+      "capacidad": 100,
+      "tipo": "galeón",
+      "capitan": "Jack Sparrow",
+      "armamento": [
+        "cañones",
+        "espadas",
+        "mosquetes"
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Venganza de la Reina Ana",
+      "capacidad": 150,
+      "tipo": "fragata",
+      "capitan": "Barbanegra",
+      "armamento": [
+        "cañones pesados",
+        "espadas",
+        "granadas"
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "Halcón de los Mares",
+      "capacidad": 75,
+      "tipo": "corbeta",
+      "capitan": "William Kidd",
+      "armamento": [
+        "cañones ligeros",
+        "arcos",
+        "ballestas"
+      ]
+    },
+    {
+      "nombre": "Thousand Sunny",
+      "capacidad": 15,
+      "tipo": "galeón",
+      "capitan": "Joy Boy",
+      "armamento": [
+        "cañones",
+        "espadas",
+        "mosquetes"
+      ],
+      "id": "4"
+    },
+    {
+      "id": "1480",
+      "nombre": "La barca de mi tío",
+      "capacidad": 1,
+      "tipo": "barca",
+      "capitan": "Mi tío",
+      "armamento": [
+        "caña"
+      ]
+    },
+    {
+      "id": "a918"
+    },
+    {
+      "id": "9da0"
+    },
+    {
+      "id": "0cec"
+    },
+    {
+      "id": "571d"
+    },
+    {
+      "id": "7d89"
+    },
+    {
+      "id": "902c"
+    },
+    {
+      "id": "f3ae"
+    },
+    {
+      "id": "83dd"
+    },
+    {
+      "id": "fce2"
+    },
+    {
+      "id": "9c4f"
+    },
+    {
+      "id": "0449"
+    },
+    {
+      "id": "32eb"
+    },
+    {
+      "id": "3ba8"
+    },
+    {
+      "id": "2d08"
+    },
+    {
+      "id": "4a48"
+    },
+    {
+      "id": "2a80"
+    },
+    {
+      "id": "3c81"
+    },
+    {
+      "id": "168d"
+    },
+    {
+      "id": "e52a"
+    },
+    {
+      "id": "0ccd"
+    },
+    {
+      "id": "3b76"
+    },
+    {
+      "id": "4211"
+    },
+    {
+      "id": "b673"
+    },
+    {
+      "id": "6312"
+    },
+    {
+      "id": "0316"
+    },
+    {
+      "id": "4a19"
+    },
+    {
+      "id": "6f01"
+    },
+    {
+      "id": "c4b9"
+    },
+    {
+      "id": "7378"
+    },
+    {
+      "id": "1f3e"
+    },
+    {
+      "id": "4bd7"
+    },
+    {
+      "id": "5b2c"
+    },
+    {
+      "id": "c5f7"
+    },
+    {
+      "id": "4f19"
+    },
+    {
+      "id": "d66b"
+    },
+    {
+      "id": "9bf2"
+    },
+    {
+      "id": "0c35"
+    },
+    {
+      "id": "a1ac"
+    },
+    {
+      "id": "d26d"
+    },
+    {
+      "id": "6357"
+    },
+    {
+      "id": "285a"
+    },
+    {
+      "id": "adcd"
+    },
+    {
+      "id": "9ef3"
+    },
+    {
+      "id": "9be5"
+    },
+    {
+      "id": "7526"
+    },
+    {
+      "id": "339d"
+    },
+    {
+      "id": "c1df"
+    },
+    {
+      "id": "e1fb"
+    },
+    {
+      "id": "3d94"
+    },
+    {
+      "id": "3467"
+    },
+    {
+      "id": "12b8"
+    },
+    {
+      "id": "aaee"
+    },
+    {
+      "id": "880b"
+    },
+    {
+      "id": "4960"
+    },
+    {
+      "id": "8d90"
+    },
+    {
+      "id": "e00a"
+    },
+    {
+      "id": "cd23"
+    },
+    {
+      "id": "9fff"
+    },
+    {
+      "id": "97ca"
+    },
+    {
+      "id": "e73f"
+    },
+    {
+      "id": "418f"
+    },
+    {
+      "id": "4ad6"
+    },
+    {
+      "id": "c4a5"
+    },
+    {
+      "id": "743b"
+    },
+    {
+      "id": "171d"
+    },
+    {
+      "id": "792a"
+    },
+    {
+      "id": "4ad7"
+    },
+    {
+      "id": "6de3"
+    },
+    {
+      "id": "2247"
+    },
+    {
+      "id": "60f3"
+    },
+    {
+      "id": "8d6d"
+    },
+    {
+      "id": "0984"
+    },
+    {
+      "id": "663d"
+    },
+    {
+      "id": "d3d6"
+    },
+    {
+      "id": "cd8d"
+    },
+    {
+      "id": "b65a"
+    },
+    {
+      "id": "fd12"
+    },
+    {
+      "id": "0288"
+    },
+    {
+      "id": "cc4a"
+    },
+    {
+      "id": "a1ff"
+    },
+    {
+      "id": "816d"
+    },
+    {
+      "id": "bbd2"
+    },
+    {
+      "id": "94b3"
+    },
+    {
+      "id": "71be"
+    },
+    {
+      "id": "ce6e"
+    },
+    {
+      "id": "a533"
+    },
+    {
+      "id": "4e70"
+    },
+    {
+      "id": "46fb"
+    },
+    {
+      "id": "f7b4"
+    },
+    {
+      "id": "f474"
+    },
+    {
+      "id": "c0b4"
+    }
+  ],
+  "piratas": [
+    {
+      "id": "1",
+      "nombre": "Jack Sparrow",
+      "edad": 45,
+      "barco": "Perla Negra",
+      "especialidad": "estrategia",
+      "recompensa": 50000
+    },
+    {
+      "id": "2",
+      "nombre": "Barbanegra",
+      "edad": 40,
+      "barco": "Venganza de la Reina Ana",
+      "especialidad": "combate",
+      "recompensa": 100000
+    },
+    {
+      "id": "3",
+      "nombre": "Anne Bonny",
+      "edad": 30,
+      "barco": "Halcón de los Mares",
+      "especialidad": "espionaje",
+      "recompensa": 70000
+    }
+  ],
+  "islas": [
+    {
+      "id": "1",
+      "nombre": "Isla Tortuga",
+      "ubicacion": "Mar Caribe",
+      "tipo": "puerto seguro",
+      "habitantes": 300,
+      "recursos": [
+        "agua",
+        "alimentos",
+        "herramientas"
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Isla del Tesoro",
+      "ubicacion": "Atlántico Sur",
+      "tipo": "isla desierta",
+      "habitantes": 0,
+      "recursos": [
+        "oro",
+        "joyas",
+        "mapas antiguos"
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "Isla de la Muerte",
+      "ubicacion": "Pacífico Norte",
+      "tipo": "isla maldita",
+      "habitantes": 50,
+      "recursos": [
+        "artefactos",
+        "piedras preciosas",
+        "esqueletos"
+      ]
+    }
+  ]
+}

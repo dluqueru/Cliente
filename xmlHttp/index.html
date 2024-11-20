@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcos</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Barcos</h1>
+    <table id="tablaBarcos">
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Capacidad</th>
+            <th>Tipo</th>
+            <th>Capitán</th>
+            <th>Armamento</th>
+        </thead>
+        <tbody id="bodyBarcos">
+            
+        </tbody>
+    </table>
+    <form id="shipForm">
+        <br>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="capacity">Capacidad:</label>
+        <input type="number" name="capacity" id="capacity" required>
+        <br>
+        <label for="type">Tipo:</label>
+        <input type="text" id="type" name="type" required>
+        <br>
+        <label for="captain">Capitán:</label>
+        <input type="text" id="captain" name="captain" required>
+        <br>
+        <br>
+        <button type="submit">Agregar Barco</button>
+    </form>
+    <script src="./app.js"></script>
+</body>
+</html>
