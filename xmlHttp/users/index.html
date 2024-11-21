@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Users</title>
+</head>
+<body>
+    <h1 class="h1 text-center">Users</h1>
+    <div class="container">
+        <ul id="userList" class="">
+    
+        </ul>
+    </div>
+    <div class="container border">
+        <form id="userForm" class="form">
+            <br>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary mb-2">Agregar Usuario</button>
+        </form>
+    </div>
+    <div class="container border mt-5">
+        <form id="updateUserForm" class="form">
+            <select id="userSelect" class="mt-4" required>
+                <option value="" disabled selected>Seleccione un usuario</option>
+            </select>
+            <br>
+            <br>
+            <input type="text" id="updateName" name="name" placeholder="Nombre" required>
+            <input type="email" id="updateEmail" name="email" placeholder="Correo electrónico" required>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary mb-2">Actualizar Usuario</button>
+        </form>
+        <div id="updateMessage"></div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html
