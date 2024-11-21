@@ -16,6 +16,7 @@ import CambiadorTexto from './estados/CambiadorTexto.jsx'
 import MostrarOcultar from './estados/MostrarOcultar.jsx'
 import ClickCounter from './estados/ClickCounter.jsx'
 import ClickLimiter from './estados/ClickLimiter.jsx'
+import TaskList from './estados/TaskList.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root')).render(
     {/* <CambiadorTexto /> */}
     {/* <MostrarOcultar /> */}
     {/* <ClickCounter /> */}
-    <ClickLimiter />
+    {/* <ClickLimiter /> */}
+    <TaskList />
   </StrictMode>
 )
