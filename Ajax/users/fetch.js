@@ -1,23 +1,16 @@
-// Ejercicio 1: Obtener una lista de usuarios
+function getUsers(){
+    fetch('http://localhost:3000/users')
+    .then(response => response.json())
+    .then(users => {
+        createUserList(users);
+        addOptions(users);
+    })
+    .catch(err => console.error(err));
+}
+
 const userList = document.getElementById('userList');
 const userSelect = document.getElementById('userSelect');
 
-const xhr = new XMLHttpRequest();
-xhr.open('GET', "http://localhost:3000/users");
-xhr.send();
-
-xhr.addEventListener('load', function(){
-    if(xhr.status === 200){
-        let users = JSON.parse(xhr.responseText);
-        createUserList(users);
-        addOptions(users);
-    } else {
-        console.log("Error");
-    }
-})
-
-
-// Ejercicio 2: Añadir un nuevo usuario con JSON
 function createUserList(users){
     users.forEach(user => {
         const li = document.createElement('li');
@@ -26,7 +19,7 @@ function createUserList(users){
     });
 }
 
-
+// Ejercicio 2: Añadir un nuevo usuario con JSON
 const userForm = document.getElementById('userForm');
 userForm.addEventListener('submit', function(e){
     e.preventDefault();
@@ -36,20 +29,21 @@ userForm.addEventListener('submit', function(e){
         'email': document.getElementById('email').value
     }
 
-    const xhrAddUser = new XMLHttpRequest();
-    xhrAddUser.open('POST', "http://localhost:3000/users");
-    xhrAddUser.setRequestHeader('content-type', 'application/json');
-    xhrAddUser.send(JSON.stringify(newUser));
-
-    xhrAddUser.addEventListener('load', function(){
-        if(xhrAddUser.status === 201){
-            alert("Usuario " + newUser.name + " creado");
-        } else {
-            console.log("Error");
+    fetch("http://localhost:3000/users", {
+        method:'POST',
+        body: JSON.stringify(newUser),
+        headers: {
+            'Content-Type': 'application/json'
         }
     })
+    .then(response => response.json())
+    .then(user => {
+        alert("Usuario " + user.name + " creado con Id: " + user.id);
+        userList.innerHTML = '';
+        getUsers();
+    })
+    .catch(err => console.error(err))
 })
-
 
 // Ejercicio 4: Modificar un usuario existente
 function addOptions(users){
@@ -73,3 +67,6 @@ updateUserForm.addEventListener('submit', function(e){
     // TODO
     // xhrUpdateUser.open('PUT', )
 })
+
+// Para inicializar la lista de usuarios
+!userList.hasChildNodes == '' && getUsers();
