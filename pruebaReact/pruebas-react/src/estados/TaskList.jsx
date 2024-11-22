@@ -21,8 +21,10 @@ function TaskList(){
         }
     }
 
-    function deleteTask(task){
-        setTasks(""); // TODO de momento lo borra todo
+    const handleDelete = (index) => {
+        const newTasks = [...tasks];
+        newTasks.splice(index, 1);
+        setTasks(newTasks);
     }
 
     return (
@@ -30,10 +32,10 @@ function TaskList(){
             <input id="task" type="text"  placeholder="Add task" value={inputValue} onChange={handleChange}/>
             <button onClick={addTask}>Add</button>
             <ul id="taskList">
-                {tasks.map(task => (
-                    <li id={task}>
+                {tasks.map((task, index) => (
+                    <li key={index} id={task}>
                         {task}
-                        <button onClick={() => deleteTask(task)}>X</button>
+                        <button onClick={() => handleDelete(index)}>X</button>
                     </li>
                 ))}
             </ul>
