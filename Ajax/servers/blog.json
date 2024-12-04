@@ -1,0 +1,59 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Introduction to JSON-Server",
+      "content": "Learn how to set up and use JSON-Server to simulate a REST API.",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "title": "Understanding REST APIs",
+      "content": "REST APIs allow applications to communicate over HTTP.",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "title": "Building Mock APIs",
+      "content": "Mock APIs are great for testing and prototyping applications.",
+      "authorId": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "comment": "Great article, very informative!",
+      "userId": 1,
+      "articleId": 1
+    },
+    {
+      "id": 2,
+      "comment": "This helped me understand REST APIs better.",
+      "userId": 2,
+      "articleId": 2
+    },
+    {
+      "id": 3,
+      "comment": "Looking forward to more articles like this.",
+      "userId": 3,
+      "articleId": 1
+    }
+  ]
+}
