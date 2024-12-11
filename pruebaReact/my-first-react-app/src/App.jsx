@@ -1,18 +1,24 @@
-import Profile from "./Profile";
 import About from "./About";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
 
-function App(){
-
-    return(
+const Router = () => {
+    return (
         <>
-        <About />
-        <div>
-        <Profile name='Daniel' age = {29} email = 'dluqueru@gmail.com' imageSrc="src/img/800px-Sandro_Botticelli_070.jpg"/>
-        <Profile name='Cristina' age = {31} email = 'cristina@gmail.com'/>
-        <Profile/>
-        </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Navigate to="/home" replace />}></Route>
+                        <Route path="home" element={<h1>Home</h1>}></Route>
+                        <Route path="pag1" element={<h1>Pág 1</h1>}></Route>
+                        <Route path="pag2" element={<h1>Pág 2</h1>}></Route>
+                        <Route path="about" element={<About />}></Route>
+                        <Route path="*" element={<h1>Error 404 :c</h1>}></Route>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </>
-    );
+    )
 }
 
-export default App
+export default Router;
