@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Minion } from '../interfaces/minion';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cards',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css'
 })
-export class CardsComponent {
+export class CardsComponent implements OnChanges{
   minions: Minion [] = ﻿[
     {
       name: "Kevin",
@@ -66,4 +67,19 @@ export class CardsComponent {
       side: "malvado"
     }
 ];
+
+displayMinions:Minion[] = [...this.minions];
+
+@Input() search:string = '';
+
+//Monitorizo los cambios
+ngOnChanges(changes: SimpleChanges): void {
+  this.filter();
+}
+
+filter():void{
+  this.displayMinions =
+  this.minions.filter(minion => minion.name.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()))
+}
+
 }

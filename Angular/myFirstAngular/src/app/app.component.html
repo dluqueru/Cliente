@@ -1,3 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [searchEvent]=""></app-navbar>
+<!-- <input type="text" name="message" id="message" (input)="updateInput($event)"> -->
 <h1 class="text-center mt-4">Lista de minions</h1>
-<app-cards></app-cards>
+<app-cards [message]="search"></app-cards>

@@ -1,4 +1,10 @@
-@for (minion of minions; track minion.name) {
+<div class="container mt-5 d-flex justify-content-center">
+    <!-- <input type="text" [(ngModel)] = "search" (input)="filter()">
+    <input type="text" [(ngModel)] = "search" (input)="sendMessage()"> 
+    <button class="btn btn-primary ms-2" (click)="filter()">Search</button> -->
+</div>
+<p class="text-center">Buscando minion: {{search}}</p>
+@for (minion of displayMinions; track minion.name) {
     <div class="container mt-5 d-flex justify-content-center">
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">

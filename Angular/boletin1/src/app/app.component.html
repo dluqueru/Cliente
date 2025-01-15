@@ -1,0 +1,20 @@
+<h1 class="text-center mt-2 mb-4">Lista de tareas</h1>
+<div class="container d-flex flex-column align-items-center justify-content-center">
+  @if (tasks.length) {
+      <ul *ngFor="let task of tasks">
+          <li>@if (task.completed) {
+              <del>{{task.title}}</del>
+              <span>✅</span>
+          } @else {
+              <span>{{task.title}}</span>
+          }
+              <button class="btn btn-primary ms-4"
+                (click)="handleClick(task.id)">
+                Completar
+              </button>
+          </li>
+      </ul>
+  } @else {
+      <p>No hay tareas pendientes</p>
+  }
+</div>

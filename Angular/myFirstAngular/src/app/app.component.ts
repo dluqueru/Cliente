@@ -10,4 +10,10 @@ import { CardsComponent } from './cards/cards.component';
 })
 export class AppComponent {
   title = 'myFirstAngular';
+
+  search:string = '';
+
+  updateSearch(search:string){
+    this.search = search;
+  }
 }
