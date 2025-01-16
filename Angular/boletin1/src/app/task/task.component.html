@@ -1,0 +1,11 @@
+<li>@if (task.completed) {
+    <del>{{task.title}}</del>
+    <span>✅</span>
+} @else {
+    <span>{{task.title}}</span>
+}
+    <button class="btn btn-primary ms-4"
+      (click)="handleClick(task.id)">
+      Completar
+    </button>
+</li>
