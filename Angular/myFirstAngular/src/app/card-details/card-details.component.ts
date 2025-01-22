@@ -1,14 +1,15 @@
-<div class="container d-flex justify-content-center">
-    <!-- <input type="text" [(ngModel)] = "search" (input)="filter()">
-    <input type="text" [(ngModel)] = "search" (input)="sendMessage()"> 
-    <button class="btn btn-primary ms-2" (click)="filter()">Search</button> -->
-</div>
-<h1 class="text-center mt-4">Lista de minions</h1>
-<p class="text-center">Buscando minion: {{search}}</p>
-@if (!minions) {
-    <p class="text-center">No hay minions :c</p>
-}
-@for (minion of minions; track minion.name) {
+import { Component, OnInit, Input } from '@angular/core';
+import { Minion } from '../interfaces/minion';
+import { MinionsService } from '../services/minions.service';
+
+@Component({
+  selector: 'app-card-details',
+  imports: [],
+  template: `
+    <h1 class="text-center mt-4">Minion {{minion.name}}</h1>
+    @if (!minion) {
+        <p class="text-center">No hay minion con ese nombre :c</p>
+    }
     <div class="container mt-5 d-flex justify-content-center">
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
@@ -34,4 +35,22 @@
             </div>
         </div>
     </div>
+  `
+})
+export class CardDetailsComponent implements OnInit{
+
+  public minion!:Minion;
+
+  constructor(private minionsService:MinionsService){}
+
+  @Input() name!:string;
+
+  ngOnInit():void {
+    this.minionsService.getMinionByName(this.name)
+      .subscribe({
+        next: minion => {
+          this.minion = minion
+        }, error: err => console.log(err)
+      })
+  }
 }

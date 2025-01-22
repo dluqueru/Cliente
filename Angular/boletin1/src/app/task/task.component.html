@@ -4,8 +4,12 @@
 } @else {
     <span>{{task.title}}</span>
 }
-    <button class="btn btn-primary ms-4"
-      (click)="handleClick(task.id)">
+    <button class="btn btn-success ms-4"
+      (click)="handleClickComplete(task.id)">
       Completar
+    </button>
+    <button class="btn btn-danger ms-2"
+      (click)="handleClickDelete(task.id)">
+      Eliminar
     </button>
 </li>

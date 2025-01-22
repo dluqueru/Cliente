@@ -7,7 +7,7 @@
     <button class="btn btn-primary mt-2 mb-5" (click)="addTask()" [disabled]="newTaskTitle.trim() === ''">Agregar</button>
     @if (tasks.length) {
         <ul *ngFor="let task of tasks">
-            <app-task [task]="task" (toParent)="handleClick($event)"></app-task>
+            <app-task [task]="task" (toParentComplete)="handleClickComplete($event)" (toParentDelete)="handleClickDelete($event)"></app-task>
         </ul>
     } @else {
         <p>No hay tareas pendientes</p>

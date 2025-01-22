@@ -11,9 +11,14 @@ export class TaskComponent {
 
   @Input() task!:Task
 
-  @Output() toParent = new EventEmitter<number>();
+  @Output() toParentComplete = new EventEmitter<string>();
+  @Output() toParentDelete = new EventEmitter<string>();
 
-  handleClick(taskId:number){
-    this.toParent.emit(taskId)
+  handleClickComplete(taskId:string){
+    this.toParentComplete.emit(taskId)
+  }
+
+  handleClickDelete(taskId:string){
+    this.toParentDelete.emit(taskId)
   }
 }
