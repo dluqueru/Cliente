@@ -4,4 +4,5 @@ export interface Minion {
     img:string;
     birth:string;
     side:string;
+    id:string;
 }

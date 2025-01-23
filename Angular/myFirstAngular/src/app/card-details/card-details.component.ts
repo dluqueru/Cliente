@@ -34,7 +34,10 @@ import { MinionsService } from '../services/minions.service';
                 </div>
             </div>
         </div>
-    </div>
+      </div>
+      <div class="container d-flex justify-content-center">
+        <a class="btn btn-secondary" href="./minions">Volver</a>
+      </div>
   `
 })
 export class CardDetailsComponent implements OnInit{
@@ -43,10 +46,10 @@ export class CardDetailsComponent implements OnInit{
 
   constructor(private minionsService:MinionsService){}
 
-  @Input() name!:string;
+  @Input() id!:string;
 
   ngOnInit():void {
-    this.minionsService.getMinionByName(this.name)
+    this.minionsService.getMinionById(this.id)
       .subscribe({
         next: minion => {
           this.minion = minion

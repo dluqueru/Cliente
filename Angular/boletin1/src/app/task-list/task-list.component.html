@@ -1,0 +1,15 @@
+<h1 class="text-center mt-2 mb-4">Lista de tareas</h1>
+<div class="container d-flex flex-column align-items-center justify-content-center">
+
+    <div *ngIf="showAlert()" class="alert alert-warning">No se puede agregar una tarea con el título vacío</div>
+
+    <input [(ngModel)]="newTaskTitle" type="text" name="addTask" id="addTask" placeholder="Agregar nueva tarea">
+    <button class="btn btn-primary mt-2 mb-5" (click)="addTask()" [disabled]="newTaskTitle.trim() === ''">Agregar</button>
+    @if (tasks.length) {
+        <ul *ngFor="let task of tasks">
+            <app-task [task]="task" (toParentComplete)="handleClickComplete($event)" (toParentDelete)="handleClickDelete($event)"></app-task>
+        </ul>
+    } @else {
+        <p>No hay tareas pendientes</p>
+    }
+</div>

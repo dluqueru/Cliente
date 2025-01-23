@@ -16,7 +16,7 @@ export class MinionsService {
     return this.httpClient.get<Minion[]>(this.url)
   }
 
-  getMinionByName(name:string):Observable<Minion>{
-    return this.httpClient.get<Minion>(this.url + '?name=' + name)
+  getMinionById(id:string):Observable<Minion>{
+    return this.httpClient.get<Minion>(this.url + '/' + id)
   }
 }

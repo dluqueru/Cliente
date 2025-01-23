@@ -16,6 +16,10 @@ export class TaskService {
     return this.httpClient.get<Task[]>(this.url)
   }
 
+  getTaskById(taskId:string):Observable<Task>{
+    return this.httpClient.get<Task>(this.url + "/" + taskId)
+  }
+
   postTask(newTask:Task):Observable<Task>{
     return this.httpClient.post<Task>(this.url, newTask)
   }

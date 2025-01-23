@@ -4,7 +4,8 @@
 } @else {
     <span>{{task.title}}</span>
 }
-    <button class="btn btn-success ms-4"
+    <a routerLink="/tasks/{{task.id}}" class="btn btn-primary ms-4">Ver detalles</a>
+    <button class="btn btn-success ms-2"
       (click)="handleClickComplete(task.id)">
       Completar
     </button>

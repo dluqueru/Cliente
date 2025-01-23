@@ -7,8 +7,10 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
-    {path: 'minions?name=:name', component: CardDetailsComponent},
-    {path: 'minions', component: CardsComponent},
+    // {path: 'minions/:id', component: CardDetailsComponent},
+    {path: 'minions', component: CardsComponent, children:[
+        {path: ':id', component: CardDetailsComponent}
+    ]},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', component: ErrorComponent}
 ];

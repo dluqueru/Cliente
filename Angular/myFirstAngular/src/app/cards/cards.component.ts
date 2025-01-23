@@ -2,10 +2,11 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { Minion } from '../interfaces/minion';
 import { FormsModule } from '@angular/forms';
 import { MinionsService } from '../services/minions.service';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterOutlet],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css'
 })

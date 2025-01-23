@@ -4,34 +4,32 @@
     <button class="btn btn-primary ms-2" (click)="filter()">Search</button> -->
 </div>
 <h1 class="text-center mt-4">Lista de minions</h1>
-<p class="text-center">Buscando minion: {{search}}</p>
+<!-- <p class="text-center">Buscando minion: {{search}}</p> -->
 @if (!minions) {
     <p class="text-center">No hay minions :c</p>
 }
-@for (minion of minions; track minion.name) {
-    <div class="container mt-5 d-flex justify-content-center">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img [src]="minion.img" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">{{minion.name}},
-                            <small class="text-body-secondary">{{minion.side}} </small>
-                            <small class="text-body-secondary">({{minion.birth}})</small>
-                        </h5>
-                        <p class="card-text">{{minion.bio}}</p>
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+    @for (minion of minions; track minion.name) {
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="minion.img" class="img-fluid rounded-start" alt="...">
                     </div>
-                </div>
-                <div class="col-md-2">
-                    @if (minion.side === 'de los buenos') {
-                        <img src="assets/img/de los buenos.PNG" class="img-fluid rounded-start" alt="..." style="height: 8vh;">
-                    } @else {
-                        <img src="assets/img/de los malos.PNG" class="img-fluid rounded-start offset-1" alt="..." style="height: 6vh;">
-                    }
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{minion.name}},
+                                <small class="text-body-secondary">{{minion.side}} </small>
+                                <small class="text-body-secondary">({{minion.birth}})</small>
+                            </h5>
+                            <a class="btn btn-primary mt-3 ms-4" href="/minions/{{minion.id}}">Detalles -></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    }
     </div>
-}
+</div>
+<router-outlet></router-outlet>
